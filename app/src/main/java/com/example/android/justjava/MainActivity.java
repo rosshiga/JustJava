@@ -23,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        // display(num);
-        //  displayPrice(num);
+        TextView qtyPicker = findViewById(R.id.qty_text);
+        int num = Integer.parseInt(qtyPicker.getText().toString());
+        displayPrice(num);
     }
 
     /**
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         int num = Integer.parseInt(qtyPicker.getText().toString());
         num++;
         display(num);
-        displayPrice(num);
+
     }
 
     public void decrement(View view) {
@@ -62,6 +63,6 @@ public class MainActivity extends AppCompatActivity {
         if (num == 0) return;
         num--;
         display(num);
-        displayPrice(num);
+
     }
 }
