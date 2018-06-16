@@ -50,11 +50,16 @@ public class MainActivity extends AppCompatActivity {
      * Increment and decrement methods for buttons
      */
 
-    private void increment(View view) {
+    public void increment(View view) {
         num++;
+        display(num);
+        displayPrice(num);
     }
 
-    private void decrement(View view) {
+    public void decrement(View view) {
+        if (num == 0) return;
         num--;
+        display(num);
+        displayPrice(num);
     }
 }
