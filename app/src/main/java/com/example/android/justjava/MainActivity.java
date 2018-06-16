@@ -11,22 +11,20 @@ import java.text.NumberFormat;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-    int num;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        num = 2;
-        display(num);
-        displayPrice(num);
+        display(2);
+        displayPrice(2);
     }
 
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(num);
-        displayPrice(num);
+        // display(num);
+        //  displayPrice(num);
     }
 
     /**
@@ -51,12 +49,16 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void increment(View view) {
+        TextView qtyPicker = findViewById(R.id.qty_text);
+        int num = Integer.parseInt(qtyPicker.getText().toString());
         num++;
         display(num);
         displayPrice(num);
     }
 
     public void decrement(View view) {
+        TextView qtyPicker = findViewById(R.id.qty_text);
+        int num = Integer.parseInt(qtyPicker.getText().toString());
         if (num == 0) return;
         num--;
         display(num);
