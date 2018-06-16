@@ -14,6 +14,12 @@
         android:layout_marginTop="@dimen/margin_16dp"
         android:text="Qty:" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-" />
+
     <TextView
         android:id="@+id/qty_text"
         android:layout_width="match_parent"
@@ -23,6 +29,12 @@
         android:text="0"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/Plus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+" />
 
     <TextView
         android:id="@+id/textView3"
@@ -50,4 +62,5 @@
         android:layout_marginTop="@dimen/margin_16dp"
         android:onClick="submitOrder"
         android:text="Order" />
+
 </LinearLayout>

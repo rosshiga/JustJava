@@ -11,18 +11,20 @@ import java.text.NumberFormat;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-
+    int num;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        num = 2;
+        display(num);
+        displayPrice(num);
     }
 
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int num = 2;
         display(num);
         displayPrice(num);
     }
@@ -42,5 +44,17 @@ public class MainActivity extends AppCompatActivity {
         number *= 5;
         TextView priceTextView = findViewById(R.id.price_text);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+
+    /**
+     * Increment and decrement methods for buttons
+     */
+
+    private void increment(View view) {
+        num++;
+    }
+
+    private void decrement(View view) {
+        num--;
     }
 }
