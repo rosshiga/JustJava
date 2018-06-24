@@ -54,7 +54,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void increment(View view) {
         TextView qtyPicker = findViewById(R.id.qty_text);
-        int num = Integer.parseInt(qtyPicker.getText().toString());
+        int num = 0;
+        try {
+            num = Integer.parseInt(qtyPicker.getText().toString());
+        } catch (NumberFormatException e) {
+            num = 0;
+        }
         num++;
         display(num);
 
@@ -63,11 +68,12 @@ public class MainActivity extends AppCompatActivity {
     public void decrement(View view) {
         TextView qtyPicker = findViewById(R.id.qty_text);
         int num = Integer.parseInt(qtyPicker.getText().toString());
-        if (num == 0) return;
+        if (num > 0)
         num--;
         display(num);
 
     }
+
 
     /**
      * This method displays the given text on the screen.
